@@ -20,6 +20,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pglgod/ecommerce-web-frontend.git"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
