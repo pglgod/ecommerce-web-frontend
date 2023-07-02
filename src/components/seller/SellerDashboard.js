@@ -45,7 +45,7 @@ export default function SellerDashboard() {
   const [adpPrice, setadpPrice] = useState()
   const [adpImg, setadpImg] = useState()
   const [adpDes, setadpDes] = useState()
-  const [adpPartNo, setadpPartNo] = useState()
+  const [adpBrand, setadpBrand] = useState()
 
   const product ={
     categary: adpCat,
@@ -54,7 +54,7 @@ export default function SellerDashboard() {
     price: adpPrice,
     productImg: adpImg,
     productDes: adpDes,
-    partNo: adpPartNo 
+    brand: adpBrand
   }
   const postProduct = (p)=>{
     p.preventDefault();
@@ -106,10 +106,10 @@ export default function SellerDashboard() {
             <form action="" className="add-product flex align-c" onSubmit={postProduct} >
               <input type="text" name="imgUrl" id="imgUrl" placeholder='http://product Img URL' value={adpImg} onChange={p=>setadpImg(p.target.value)} required/>
               <input type="text" placeholder='Product Name' value={adpName} onChange={p=>setadpName(p.target.value)} required/>
+              <input type="text" placeholder='Brand Name' value={adpBrand} onChange={p=>setadpBrand(p.target.value)} required/>
               <input type="text" placeholder='Category' value={adpCat} onChange={p=>setadpCat(p.target.value)} required/>
               <input type="number" placeholder='Price'  value={adpPrice} onChange={p=>setadpPrice(p.target.value)} required/>
               <input type="text" placeholder='Description' value={adpDes} onChange={p=>setadpDes(p.target.value)} required/>
-              <input type="text" placeholder='Part No' value={adpPartNo} onChange={p=>setadpPartNo(p.target.value)} required/>
               <input type="submit" value="Add Product"/>
             </form>
           </div>

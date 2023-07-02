@@ -11,6 +11,7 @@ export default function SingleProduct() {
     const [price, setprice] = useState();
     const [prodDes, setprodDes] = useState();
     const [prodImg,setprodImg]=useState();
+    const [brand, setbrand] = useState()
 
 
 
@@ -25,6 +26,7 @@ export default function SingleProduct() {
             setprodImg(resp[0].productImg)
             setcategory(resp[0].categary)
             setprodDes(resp[0].productDes)
+            setbrand(resp[0].brand)
         })
 
     }
@@ -67,6 +69,7 @@ export default function SingleProduct() {
           </div>
           <div className="si-pro-dtl-cnt">
                 <h1 className="prod-name">{prodName}</h1>
+                <h2 className='brand-name'>{brand}</h2>
                 <h3 className="prod-price">RS.{price}</h3>
                 <div className='shope-review flex align-c'>
                     <p className="prod-shop-name">Shope : {shope}</p>

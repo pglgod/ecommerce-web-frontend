@@ -554,6 +554,11 @@
     color: var(--color-black);
     margin-bottom: 10px;
 }
+.brand-name{
+    font-size: 35px;
+    color: var(--bg-btn);
+    margin-bottom: 10px;
+}
 .prod-price{
     font-size: 24px;
     color: var(--bg-main);
@@ -931,7 +936,7 @@
     font-size: 16px;
 }
 .add-product input[type="number"]::-webkit-inner-spin-button, .add-product input[type="number"]::-webkit-outer-spin-button{
- -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 

@@ -10,7 +10,7 @@ export default function Shop() {
     
     useEffect(() => {
       loadProducts();
-      sessionStorage.clear();
+    //   sessionStorage.removeItem("productId");
     },[] );
 
     const loadProducts = async ()=>{
