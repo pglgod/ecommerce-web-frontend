@@ -16,13 +16,12 @@ export default function SellerDashboard() {
   // let sellerId = localStorage.getItem('sellerId')
   useEffect(()=>{
     if (sellerId === " " || sellerId === null) {
-      
       usenavigate("/seller.dashboard/signin");
     }
     else{
       loadSellerPro();
     }
-  })
+  },[ ])
 
   const loadSellerPro = ()=>{
     fetch(`https://e-commers-web-backend.onrender.com/sellers/?id=${sellerId}`, {method:"GET", redirect:"follow"}).then((sd)=>{
@@ -69,7 +68,7 @@ export default function SellerDashboard() {
 
 
   const logOutSeller = ()=>{
-    localStorage.clear();
+    sessionStorage.clear();
     usenavigate("/seller.dashboard/signin");
   }
 
@@ -99,7 +98,7 @@ export default function SellerDashboard() {
           </div>
           
           <div className="row">
-            <SProductList sellerShop={sellerShope} /> 
+            <SProductList /> 
           </div>
 
           <div className="row flex align-c" >

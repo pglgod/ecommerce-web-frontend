@@ -19,7 +19,7 @@ export default function SingleProduct() {
         fetch(`https://e-commers-web-backend.onrender.com/products/?id=${productId}`, {method:"GET", redirect: "follow"}).then((res)=>{
             return res.json();
         }).then((resp)=>{
-            console.log(resp)
+            // console.log(resp)
             setprodName(resp[0].productName);
             setprice(resp[0].price);
             setshope(resp[0].Shope);

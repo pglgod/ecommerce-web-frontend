@@ -110,7 +110,8 @@
 
 .h-poster{
     width: 100vw;
-    height: 800px;
+    /* height: 800px; */
+    height: 645px;
     background: var(--bg-second);
 }
 .h-po-content{
@@ -901,6 +902,10 @@
 
 .seller-product-cnt{
     width: calc(100vw - 220px);
+    overflow-y: scroll;
+}
+.seller-product-cnt::-webkit-scrollbar{
+    display: none;
 }
 
 

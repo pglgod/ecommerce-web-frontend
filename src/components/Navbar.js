@@ -18,17 +18,17 @@ export default function Navbar() {
                     <li className="nav-list-item"><Link to="/about" className={location.pathname === "/about" ? "active-brad": "desabled-brad"}>About</Link></li>
                     <li className="nav-list-item"><Link to="/contact" className={location.pathname === "/contact" ? "active-brad": "desabled-brad"}>Contact</Link></li>
                     <li className="nav-list-item"><Link to="/tool" className={location.pathname === "/tool" ? "active-brad": "desabled-brad"}>Tool</Link></li>
-                    <li className="nav-list-item"><Link to="/seller.dashboard" className={location.pathname === "/seller.dashboard" ? "active-brad": "desabled-brad"}>Seller Dashboard</Link></li>
+                    <li className="nav-list-item"><Link to="/seller.dashboard" className={location.pathname === "/seller.dashboard"  ? "active-brad": "desabled-brad"}>Seller Dashboard</Link></li>
                 </ul>
             </div>
             <div className="nav-items">
                 <ul className='nav-item-list flex align-c'>
                     <li>
-                        <a href="/">
+                        <Link to="/buyer">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M23.3333 14V8.16666H25.6667V15.1667H23.3333M23.3333 19.8333H25.6667V17.5H23.3333M11.6667 15.1667C14.7817 15.1667 21 16.73 21 19.8333V23.3333H2.33333V19.8333C2.33333 16.73 8.55166 15.1667 11.6667 15.1667ZM11.6667 4.66666C12.9043 4.66666 14.0913 5.15832 14.9665 6.03349C15.8417 6.90866 16.3333 8.09565 16.3333 9.33332C16.3333 10.571 15.8417 11.758 14.9665 12.6332C14.0913 13.5083 12.9043 14 11.6667 14C10.429 14 9.242 13.5083 8.36683 12.6332C7.49166 11.758 7 10.571 7 9.33332C7 8.09565 7.49166 6.90866 8.36683 6.03349C9.242 5.15832 10.429 4.66666 11.6667 4.66666ZM11.6667 17.3833C8.20166 17.3833 4.55 19.0867 4.55 19.8333V21.1167H18.7833V19.8333C18.7833 19.0867 15.1317 17.3833 11.6667 17.3833ZM11.6667 6.88332C11.0169 6.88332 10.3937 7.14145 9.93425 7.60091C9.47479 8.06038 9.21666 8.68354 9.21666 9.33332C9.21666 9.9831 9.47479 10.6063 9.93425 11.0657C10.3937 11.5252 11.0169 11.7833 11.6667 11.7833C12.3164 11.7833 12.9396 11.5252 13.3991 11.0657C13.8585 10.6063 14.1167 9.9831 14.1167 9.33332C14.1167 8.68354 13.8585 8.06038 13.3991 7.60091C12.9396 7.14145 12.3164 6.88332 11.6667 6.88332Z" fill="black"/>
                             </svg>
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <a href="/">

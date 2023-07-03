@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 
 export default function Shop() {
 
-    const [products, setProductss] = useState([]);
+    const [products, setProducts] = useState([]);
 
 
     
@@ -19,7 +19,7 @@ export default function Shop() {
         fetch("https://e-commers-web-backend.onrender.com/products", {method: "GET", redirect:"follow"}).then((res)=>{
             return res.json();
         }).then((resp)=>{
-            setProductss(resp)
+            setProducts(resp)
         })
     };
 

@@ -1,51 +1,45 @@
-import React, { useEffect } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState} from 'react';
 
 export default function SProductList() {
 
 
-    // const [prod, setProd] = useState();
+    const [data, setdata] = useState()
 
-    // const usenavigate = useNavigate;
 
-    useEffect(() => {
-      
-        lProdList();
-        
-
+    useEffect(()=>{
+        loadSellerProd();
     })
-    
-    const sellerShope = sessionStorage.getItem("sellerShope")
 
-    const lProdList = ()=>{
-        fetch(`https://e-commers-web-backend.onrender.com/products/?Shope=${sellerShope}`, {method:"GET", redirect:"follow" }).then((ress)=>{
+
+    const loadSellerProd = ()=>{
+        let sellerShope = sessionStorage.getItem("sellerShope");
+
+        fetch(`https://e-commers-web-backend.onrender.com/products/?Shope=${sellerShope}`).then((ress)=>{
             return ress.json();
-        }).then((ressp)=>{
-            // setProd(ressp);
-            // return ressp;
+        }).then((resp)=>{
+            setdata(resp)
+            console.log(" jhbd",data)
         })
     }
 
-    // const loadProdDtl = ()=>{
-    //     usenavigate("/shop/product")
-    // }
+
 
   return (
-    <div>
-
-        {
-            // prod.map((element)=>{
-            //     return <div className="row flex align-c " id='hggh' >
-            //     <img src={element.productImg} alt="" onClick={loadProdDtl}/>
-            //     <h4>{element.productName}</h4>
-            //     <h5>{element.categary}</h5>
-            //     <h5>{element.partNo}</h5>
-            //     <h5>RS.{element.price}</h5>
-            //     <button>Remove</button>
-            // </div>
+    <>
+            { 
+            // data.map((element)=>{
+            //     return <div className="row flex align-c j-co-sb " id='hggh' >
+            //             <img src={element.productImg} alt="" />
+            //             <h4>{element.productName}</h4>
+            //             <h5>{element.brand}</h5>
+            //             <h5>{element.categary}</h5>
+            //             <h5>RS.{element.price}</h5>
+            //             <button>Remove</button>
+            //         </div> 
             // })
-        }
-      
-    </div>
+
+            }
+    </>
   )
 }
+
