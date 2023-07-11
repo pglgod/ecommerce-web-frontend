@@ -87,6 +87,20 @@
       "shippingAddress": "Mumbra, Pune - Maharastra.",
       "password": "atul@pass"
     }
+  ],
+
+  "orders":[
+    {
+      "buyer_id": "atul@gmail.com",
+      "id": "fv5f45",
+      "categary": "Wheel",
+      "productName": "R90 - R  AL13 Wheel",
+      "brand": "AL13",
+      "Shope": "Golden Garage",
+      "price": "365999.00",
+      "productImg": "https://i.pinimg.com/564x/da/46/4d/da464d28228aab4a5d1c551b34e57d73.jpg",
+      "productDes": "Forged aluminum wheel with a matte black finish "
+    }  
   ]
 }
 

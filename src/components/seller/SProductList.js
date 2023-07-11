@@ -27,16 +27,16 @@ export default function SProductList() {
   return (
     <>
             { 
-            // data.map((element)=>{
-            //     return <div className="row flex align-c j-co-sb " id='hggh' >
-            //             <img src={element.productImg} alt="" />
-            //             <h4>{element.productName}</h4>
-            //             <h5>{element.brand}</h5>
-            //             <h5>{element.categary}</h5>
-            //             <h5>RS.{element.price}</h5>
-            //             <button>Remove</button>
-            //         </div> 
-            // })
+            data?.map((element)=>{
+                return <div className="row flex align-c j-co-sb " id='hggh' >
+                        <img src={element.productImg} alt="" />
+                        <h4>{element.productName}</h4>
+                        <h5>{element.brand}</h5>
+                        <h5>{element.categary}</h5>
+                        <h5>RS.{element.price}</h5>
+                        <button>Remove</button>
+                    </div> 
+            })
 
             }
     </>

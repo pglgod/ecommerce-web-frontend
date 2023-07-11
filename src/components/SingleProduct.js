@@ -93,7 +93,7 @@ export default function SingleProduct() {
                       <input type="number"  value='1' id="cartNum" readOnly />
                       <input type="button" onClick={plusNum} value="+" />
                   </div>
-                  <button>Add To Cart</button>
+                  <button>Purchase Now</button>
                 </div>
                 <div className="h-line"></div>
                 <div className="sub-dtls">

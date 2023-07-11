@@ -72,7 +72,7 @@ export default function SellerSignup() {
     }
     if ( document.getElementById('sellerPolices').checked === false) {
       result = false;
-      alert("You must accept our police before you can continue.")
+      alert("You must accept our police after you can continue.")
     }
     return result;
   }

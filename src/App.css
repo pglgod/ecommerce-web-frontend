@@ -641,10 +641,12 @@
 }
 
 .add-to-cart-cnt button{
+    padding: 5px 0;
     border: none;
     background: none;
     font-size: 16px;
     cursor: pointer;
+    border-bottom: 1px dashed var(--color-black);
 }
 
 .h-line{
@@ -804,6 +806,10 @@
     width: calc(100% - 30px);
 }
 
+#buyerName{
+    width: calc(100% - 30px);
+}
+
 
 /* Seller Sign in  */
 
@@ -945,7 +951,7 @@
   margin: 0;
 }
 
-.add-product input[type="submit"], .row button{
+.add-product input[type="submit"], .buyer-logoutBtn, .row button{
     width: 150px;
     height: 30px;
     font-size: 16px;
@@ -955,10 +961,23 @@
     color: var(--bg-btn);
     cursor: pointer;
 }
-.add-product input[type="submit"]:hover, .row button:hover{
+.add-product input[type="submit"]:hover, .buyer-logoutBtn:hover, .row button:hover{
     background-color: var(--bg-btn);
     color: var(--bg-btn-0);
 }
+
+.buyer-logoutBtn{
+    width: calc(300px - 55px);
+    position: absolute;
+    bottom: 50px;
+}
+
+/* 
+#hjgvj{
+    display: none;
+} */
+
+
 
 
 
