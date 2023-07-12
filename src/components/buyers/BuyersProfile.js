@@ -24,7 +24,7 @@ export default function BuyersProfile() {
     useEffect(  ()=>{
           loadBuyerProfile()
           loadOrderdPList()   
-    }, [ ])
+    })
 
 
 
@@ -77,7 +77,7 @@ export default function BuyersProfile() {
         <div className="seller-product-cnt">
           {/* Orders */}
           <div className="row flex align-c j-co-sb">
-            <h1 onClick={loadOrderdPList} style={{cursor: "pointer"}}>Orders</h1>
+            <h1  style={{cursor: "pointer"}}>Orders</h1>
           </div>
           <div className="row" id='hjgvj' >
             { 

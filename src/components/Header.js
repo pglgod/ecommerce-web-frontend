@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 export default function Header() {
 
     const usenavigate = useNavigate();
+    
+//   let sellerId = sessionStorage.getItem('sellerId')
+    
+
     const removeHeader = ()=>{
         document.getElementById('header').style.display="none";
     }

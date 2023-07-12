@@ -1,44 +1,29 @@
-import React, { useEffect, useState} from 'react';
+import React  from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function SProductList() {
+export default function SProductList(props) {
 
+    const { pName, pImg, pCat, pBrand, pPrice, Key } = props
 
-    const [data, setdata] = useState()
+    const usenavigate = useNavigate()
 
-
-    useEffect(()=>{
-        loadSellerProd();
-    })
-
-
-    const loadSellerProd = ()=>{
-        let sellerShope = sessionStorage.getItem("sellerShope");
-
-        fetch(`https://e-commers-web-backend.onrender.com/products/?Shope=${sellerShope}`).then((ress)=>{
-            return ress.json();
-        }).then((resp)=>{
-            setdata(resp)
-            console.log(" jhbd",data)
-        })
-    }
-
+  const loadProdDtl = ()=>{
+    usenavigate('/shop/product');
+    sessionStorage.setItem("productId", Key);
+  }
 
 
   return (
     <>
-            { 
-            data?.map((element)=>{
-                return <div className="row flex align-c j-co-sb " id='hggh' >
-                        <img src={element.productImg} alt="" />
-                        <h4>{element.productName}</h4>
-                        <h5>{element.brand}</h5>
-                        <h5>{element.categary}</h5>
-                        <h5>RS.{element.price}</h5>
-                        <button>Remove</button>
-                    </div> 
-            })
-
-            }
+      <div className="row flex align-c j-co-sb "  >
+          <img src={pImg} alt="" onClick={loadProdDtl} />
+          <h4>{pName}</h4>
+          <h5>{pBrand}</h5>
+          <h5>{pCat}</h5>
+          <h5>RS.{pPrice}</h5>
+          <button>Remove</button>
+      </div> 
+            
     </>
   )
 }
