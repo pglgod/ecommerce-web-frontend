@@ -4,6 +4,7 @@ import React, {useEffect, useState}  from 'react';
 export default function SingleProduct() {
 
     const productId = sessionStorage.getItem('productId');
+    const buyerId =  sessionStorage.getItem('loginToken');
     
     const [category, setcategory] = useState();
     const [prodName, setprodName] = useState();
@@ -12,8 +13,12 @@ export default function SingleProduct() {
     const [prodDes, setprodDes] = useState();
     const [prodImg,setprodImg]=useState();
     const [brand, setbrand] = useState()
+    // const [cartQuant, setcartQuant] = useState(1)
 
 
+    useEffect(()=>{
+        loadSingleProduct()
+    });
 
     const loadSingleProduct = ()=>{
         fetch(`https://e-commers-web-backend.onrender.com/products/?id=${productId}`, {method:"GET", redirect: "follow"}).then((res)=>{
@@ -31,18 +36,47 @@ export default function SingleProduct() {
 
     }
     
-    useEffect(()=>{
-        loadSingleProduct()
-    });
 
-
-    
     var cartNum = document.getElementById("cartNum");
     const minusNum = ()=>{
        --cartNum.value
        }
     const plusNum = ()=>{
         ++cartNum.value;
+    }
+
+
+    const handleBuyProduct = ()=>{
+
+
+        if (buyerId === " " || buyerId === null) {
+            alert('Please Login to start Purchasing!')
+        }else{
+            if (cartNum.value === 0 || cartNum.value < 1) {
+                alert("Quantity should not be zero")
+            }else{
+                const boughtP = {
+                    buyer_id: buyerId,
+                    id: productId,
+                    categary: category,
+                    productName: prodName,
+                    brand: brand,
+                    shope: shope,
+                    price: price,
+                    productImg: prodImg,
+                    productDes: prodDes,
+                    quantity: cartNum.value
+                }
+
+                fetch(`https://e-commers-web-backend.onrender.com/orders`, {
+                    method: "POST",
+                    headers:{'Content-Type': 'application/json'},
+                    body : JSON.stringify(boughtP)
+                }).then(()=>{
+                    alert("thanks for purchasing")
+                });
+            }
+        }
     }
       
   return (
@@ -90,10 +124,10 @@ export default function SingleProduct() {
                 <div className="add-to-cart-cnt flex align-c">
                   <div className="cart-in-lable flex align-c">
                       <input type="button" onClick={minusNum} value="-" />
-                      <input type="number"  value='1' id="cartNum" readOnly />
+                      <input type="number"  value="1" id="cartNum" readOnly />
                       <input type="button" onClick={plusNum} value="+" />
                   </div>
-                  <button>Purchase Now</button>
+                  <button onClick={handleBuyProduct} >Purchase Now</button>
                 </div>
                 <div className="h-line"></div>
                 <div className="sub-dtls">

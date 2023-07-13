@@ -22,7 +22,7 @@ export default function SellerLogin() {
             }).then((resp)=>{
                 if (email === resp[0].id ) {
                     if (password === resp[0].password) {
-                    alert("Login Succede");
+                    // alert("Login Succede");
                     sessionStorage.setItem("sellerId", resp[0].id);
                     // localStorage.setItem("sellerId", resp[0].id);
                     usenavigate("/seller.dashboard")

@@ -8,7 +8,6 @@ export default function SellerDashboard() {
   const  usenavigate = useNavigate();
 
   
-  const [data, setdata] = useState()
   const [sellerName, setsellerName] = useState()
   const [sellerShope, setsellerShope] = useState()
   const [sellerEmail, setsellerEmail] = useState()
@@ -31,9 +30,8 @@ export default function SellerDashboard() {
     }
     else{
       loadSellerPro();
-      loadSellerProd();
     }
-  })
+  }, [])
 
 
 
@@ -52,55 +50,6 @@ export default function SellerDashboard() {
       setsellerAddress(sData[0].address);
     });
   }
-
-
-// Adding Product By Seller
-
-  const [adpCat, setadpCat] = useState()
-  const [adpName, setadpName] = useState()
-  const [adpPrice, setadpPrice] = useState()
-  const [adpImg, setadpImg] = useState()
-  const [adpDes, setadpDes] = useState()
-  const [adpBrand, setadpBrand] = useState()
-
-  const postProduct = (p)=>{
-    p.preventDefault();
-    
-    const product ={
-      categary: adpCat,
-      productName: adpName,
-      Shope: sellerShope,
-      price: adpPrice,
-      productImg: adpImg,
-      productDes: adpDes,
-      brand: adpBrand
-    }
-
-    fetch(`https://e-commers-web-backend.onrender.com/products/`,{
-      method:"POST",
-      headers: {"content-type":"application/json"},
-      body:JSON.stringify(product)
-    }).then((res)=>{
-      alert('added')
-    })
-  }
-
-
-
-
-  // fathing Sellers Product
-
-  const loadSellerProd = ()=>{
-
-    fetch(`https://e-commers-web-backend.onrender.com/products/?Shope=${sellerShope}`).then((ress)=>{
-        return ress.json();
-    }).then((resp)=>{
-        setdata(resp)
-        // console.log(" jhbd",data)
-    })
-}
-
-
 
   return (
     <div>
@@ -129,26 +78,8 @@ export default function SellerDashboard() {
           <div className="row flex align-c j-co-sb">
             <h2>Add Procucts</h2>
           </div>
-
-          <div className="row flex align-c" >
-            <form action="" className="add-product flex align-c" onSubmit={postProduct} >
-              <input type="text" name="imgUrl" id="imgUrl" placeholder='http://product Img URL' value={adpImg} onChange={p=>setadpImg(p.target.value)} required/>
-              <input type="text" placeholder='Product Name' value={adpName} onChange={p=>setadpName(p.target.value)} required/>
-              <input type="text" placeholder='Brand Name' value={adpBrand} onChange={p=>setadpBrand(p.target.value)} required/>
-              <input type="text" placeholder='Category' value={adpCat} onChange={p=>setadpCat(p.target.value)} required/>
-              <input type="number" placeholder='Price'  value={adpPrice} onChange={p=>setadpPrice(p.target.value)} required/>
-              <input type="text" placeholder='Description' value={adpDes} onChange={p=>setadpDes(p.target.value)} required/>
-              <input type="submit" value="Add Product"/>
-            </form>
-          </div>
           
-          <div className="row">
-            { 
-              data?.map((element)=>{
-                return <SProductList Key={element.id} pName={element.productName} pImg={element.productImg} pBrand={element.brand} pCat={element.categary} pPrice={element.price}  />
-              })
-            } 
-          </div>
+           <SProductList sellerShope={sellerShope}  />
 
         </div>
       </div>

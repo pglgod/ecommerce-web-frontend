@@ -24,7 +24,7 @@ export default function BuyersProfile() {
     useEffect(  ()=>{
           loadBuyerProfile()
           loadOrderdPList()   
-    })
+    } )
 
 
 
@@ -32,7 +32,7 @@ export default function BuyersProfile() {
          fetch(`https://e-commers-web-backend.onrender.com/buyers/?id=${loginToken}`, { method:"GET", redirect:"follow" }).then((res)=>{
             return res.json();
         }).then((resp)=>{
-            console.log( "buyer profile", resp);
+            // console.log( "buyer profile", resp);
             setProfileName(resp[0].name);
             setProfileId(resp[0].id);
             setProfilePhone(resp[0].phoneNumber)
@@ -45,7 +45,7 @@ export default function BuyersProfile() {
         return res.json();
       }).then((resp)=>{
         setOrderP(resp)
-        console.log(  "orderd Product",resp)
+        // console.log(  "orderd Product",resp)
       }).catch(()=>{
         console.log("failed to load")
       })
@@ -79,10 +79,10 @@ export default function BuyersProfile() {
           <div className="row flex align-c j-co-sb">
             <h1  style={{cursor: "pointer"}}>Orders</h1>
           </div>
-          <div className="row" id='hjgvj' >
+          <div className="row"  >
             { 
               orderP?.map((element)=>{
-                return <OrderdPList   pName={element.productName} pBrand={element.brand} pcat={element.categary} pPrice={element.price} pImg={element.productImg} pKey={element.id}  />
+                return <OrderdPList   pName={element.productName} pBrand={element.brand} pQuant={element.quantity} pPrice={element.price} pImg={element.productImg} pKey={element.id}  />
               })
             }
           </div>
