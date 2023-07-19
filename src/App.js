@@ -14,6 +14,7 @@ import SellerLogin from './components/seller/SellerLogin';
 import BuyersProfile from './components/buyers/BuyersProfile';
 import BuyerSingUp from './components/buyers/BuyerSingUp';
 import BuyerLogin from './components/buyers/BuyerLogin';
+import About from './components/About';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                 
                 <Route exact path='/' element={<Home/>} />
                 <Route exact path='/shop' element={<Shop/>} />
+                <Route exact path='/about' element={<About/>} />
                 <Route exact path='/shop/product' element={<SingleProduct/>} />
                 <Route exact path="/seller.dashboard" element={<SellerDashboard/>} />
                 <Route exact path="/seller.dashboard/signup" element={<SellerSignup/>} />

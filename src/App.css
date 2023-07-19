@@ -972,6 +972,21 @@
     bottom: 50px;
 }
 
+.about-cnt{
+    margin: auto;
+    max-width: 1000px;
+}
+
+.about-cnt ul{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    
+}
+.about-cnt ul li{
+    list-style-type:disc;
+}
+
 
 
 
